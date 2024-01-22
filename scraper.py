@@ -23,11 +23,6 @@ template = ''
 with open('template.html', 'r') as file:
     template = file.read()
 
-def create_file(body):
+def create_template(body):
     html = template.replace('TITLE GOES HERE', 'infourok').replace('CONTENT GOES HERE', body)
-
-    with open('tmp.html', 'w') as file:
-        file.write(html)
-
-content = scrape(url)
-create_file(content)
+    return html
